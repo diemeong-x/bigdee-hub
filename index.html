@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dede Iskandar (BigDee) | IT Infrastructure & Systems Engineer</title>
+    <meta name="description" content="Hub personal, kartu nama digital, perkakas kalkulator jaringan lapangan (IT Toolbox), CLI Cheatsheet, dan portofolio rekayasa sistem oleh Dede Iskandar.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-active {
+            background-color: #10b981;
+            color: #020617;
+            border-color: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Top Identity & Digital vCard Header -->
+    <header class="border-b border-slate-800/80 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        SYSTEMS & NETWORK ENGINEERING HUB
+                    </div>
+                    <div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Dede Iskandar</h1>
+                        <p class="text-slate-400 text-base sm:text-lg mt-1">IT Infrastructure Specialist &bull; Founder <span class="text-slate-200 font-medium">CV Orange Netcom Sinergi</span></p>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
+                        Merancang topologi jaringan multi-ISP, sistem keamanan terintegrasi, server lokal <i>self-hosted</i>, dan otomasi perangkat keras berbasis mikrokontroler.
+                    </p>
+
+                    <!-- Action Buttons: vCard, QR, WhatsApp -->
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <button onclick="downloadVCard()" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-lg shadow-emerald-500/20">
+                            <i class="fa-solid fa-address-card"></i> Simpan Kontak (.vcf)
+                        </button>
+                        <button onclick="openVCardQR()" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm border border-slate-700 transition">
+                            <i class="fa-solid fa-qrcode text-emerald-400"></i> QR Kartu Nama
+                        </button>
+                        <a href="https://wa.me/6285711779993" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold px-4 py-2.5 rounded-xl text-sm border border-slate-800 transition">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> 0857-1177-9993
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ecosystem Portal Cards -->
+                <div class="w-full md:w-80 space-y-3">
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Ekosistem & Layanan</p>
+                    <a href="https://orangenetcom.my.id" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 hover:border-orange-500/50 transition group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-white text-sm group-hover:text-orange-400 transition">Orange Netcom</h2>
+                                    <p class="text-xs text-slate-400">Solusi IT, Jaringan, CCTV & PC</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-orange-400"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://mamaiting.my.id" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 hover:border-sky-500/50 transition group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-white text-sm group-hover:text-sky-400 transition">Mamaiting Digital</h2>
+                                    <p class="text-xs text-slate-400">Layanan Digital & Self-Hosted Hub</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-sky-400"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Tabs -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+        <div class="flex flex-wrap gap-2.5 mb-8 border-b border-slate-800 pb-6">
+            <button onclick="switchMainTab('toolbox')" id="tab-btn-toolbox" class="tab-active px-5 py-2.5 rounded-xl text-sm font-bold border border-slate-800 transition flex items-center gap-2">
+                <i class="fa-solid fa-screwdriver-wrench"></i> IT Field Toolbox
+            </button>
+            <button onclick="switchMainTab('cheatsheet')" id="tab-btn-cheatsheet" class="bg-slate-900 text-slate-300 hover:border-slate-700 px-5 py-2.5 rounded-xl text-sm font-bold border border-slate-800 transition flex items-center gap-2">
+                <i class="fa-solid fa-terminal"></i> CLI Cheatsheet & Wiki
+            </button>
+            <button onclick="switchMainTab('lab')" id="tab-btn-lab" class="bg-slate-900 text-slate-300 hover:border-slate-700 px-5 py-2.5 rounded-xl text-sm font-bold border border-slate-800 transition flex items-center gap-2">
+                <i class="fa-solid fa-flask"></i> Engineering Lab
+            </button>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 1: IT FIELD TOOLBOX (100% CLIENT-SIDE)            -->
+        <!-- ========================================================= -->
+        <section id="sec-toolbox" class="space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- TOOL 1: IPv4 SUBNET / CIDR CALCULATOR -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3 class="font-bold text-white text-base">Kalkulator Subnet IPv4 / CIDR</h3>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div class="col-span-2">
+                            <label class="block text-xs text-slate-400 mb-1">Alamat IPv4</label>
+                            <input type="text" id="sub-ip" value="192.168.88.10" oninput="calcSubnet()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm font-mono text-white outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Prefix (CIDR)</label>
+                            <select id="sub-cidr" onchange="calcSubnet()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm font-mono text-white outline-none focus:border-emerald-500"></select>
+                        </div>
+                    </div>
+                    <div id="sub-result" class="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2 text-xs font-mono"></div>
+                </div>
+
+                <!-- TOOL 2: CCTV STORAGE & BANDWIDTH ESTIMATOR -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-hard-drive"></i></div>
+                        <h3 class="font-bold text-white text-base">Estimator Storage & Bandwidth CCTV</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Jumlah Kamera</label>
+                            <input type="number" id="cctv-cam" value="8" min="1" max="256" oninput="calcCCTV()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Resolusi</label>
+                            <select id="cctv-res" onchange="calcCCTV()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                <option value="2048">2 MP (1080p)</option>
+                                <option value="4096" selected>4 MP (2K)</option>
+                                <option value="5120">5 MP</option>
+                                <option value="8192">8 MP (4K)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Kompresi</label>
+                            <select id="cctv-codec" onchange="calcCCTV()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                <option value="1.0">H.264</option>
+                                <option value="0.55" selected>H.265</option>
+                                <option value="0.35">H.265+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Frame Rate</label>
+                            <select id="cctv-fps" onchange="calcCCTV()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                <option value="0.65">15 FPS</option>
+                                <option value="0.85">20 FPS</option>
+                                <option value="1.0" selected>25/30 FPS</option>
+                            </select>
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs text-slate-400 mb-1">Target Retensi Rekaman (Hari)</label>
+                            <input type="number" id="cctv-days" value="30" min="1" max="365" oninput="calcCCTV()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                        </div>
+                    </div>
+                    <div id="cctv-result" class="bg-slate-950 border border-slate-800 rounded-xl p-4 grid grid-cols-2 gap-4 text-center"></div>
+                </div>
+
+                <!-- TOOL 3: MIKROTIK ROUTEROS SCRIPT GENERATOR -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-code"></i></div>
+                            <h3 class="font-bold text-white text-base">Generator Skrip MikroTik</h3>
+                        </div>
+                        <button onclick="copyText('mk-output', this)" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+                            <i class="fa-regular fa-copy mr-1"></i> Salin
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Template Konfigurasi</label>
+                            <select id="mk-tpl" onchange="renderMkInputs(); genMkScript();" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                <option value="nat">NAT Masquerade WAN</option>
+                                <option value="queue">Simple Queue Limit IP</option>
+                                <option value="syslog">Remote Syslog Server</option>
+                                <option value="dns">DNS Static & Cache</option>
+                            </select>
+                        </div>
+                        <div id="mk-param-1-wrap"></div>
+                    </div>
+                    <div id="mk-param-2-wrap" class="grid grid-cols-2 gap-3 mb-3"></div>
+                    <pre id="mk-output" class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs font-mono text-emerald-300 overflow-x-auto"></pre>
+                </div>
+
+                <!-- TOOL 4: WIFI QR CODE GENERATOR -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i class="fa-solid fa-wifi"></i></div>
+                        <h3 class="font-bold text-white text-base">WiFi QR Code Generator</h3>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <div class="w-full flex-1 space-y-3">
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Nama WiFi (SSID)</label>
+                                <input type="text" id="wifi-ssid" value="OrangeNetcom_Office" oninput="genWifiQR()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div>
+                                    <label class="block text-xs text-slate-400 mb-1">Keamanan</label>
+                                    <select id="wifi-enc" onchange="genWifiQR()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                        <option value="WPA">WPA/WPA2</option>
+                                        <option value="nopass">Tanpa Sandi</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block text-xs text-slate-400 mb-1">Kata Sandi WiFi</label>
+                                    <input type="text" id="wifi-pass" value="koneksi2026" oninput="genWifiQR()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white outline-none focus:border-emerald-500">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded-2xl flex-shrink-0">
+                            <div id="wifi-qr-box"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 2: CLI CHEATSHEET & WIKI (DYNAMIC FROM API)       -->
+        <!-- ========================================================= -->
+        <section id="sec-cheatsheet" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row gap-3 justify-between">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-500 text-sm"></i>
+                    <input type="text" id="cs-search" oninput="filterCheatsheets()" placeholder="Cari perintah, tag, atau topik (misal: failover, tftp, systemd)..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white outline-none focus:border-emerald-500">
+                </div>
+                <div id="cs-cat-filters" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div id="cs-list" class="space-y-4">
+                <div class="text-center py-12 text-slate-500 text-sm"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Memuat catatan teknis...</div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 3: ENGINEERING LAB (DYNAMIC FROM API)             -->
+        <!-- ========================================================= -->
+        <section id="sec-lab" class="hidden space-y-6">
+            <div id="lab-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="col-span-full text-center py-12 text-slate-500 text-sm"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Memuat dokumentasi proyek...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 mt-16 py-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p><span id="secret-admin-trigger" class="select-none cursor-default">&copy; 2026</span> Dede Iskandar &bull; Pondok Cabe Ilir, Pamulang, Tangerang Selatan</p>
+            <div class="flex items-center gap-4">
+                <a href="mailto:info@orangenetcom.my.id" class="hover:text-slate-300 transition">info@orangenetcom.my.id</a>
+                <span>&bull;</span>
+                <a href="https://orangenetcom.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition">CV Orange Netcom Sinergi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal QR Code Kartu Nama -->
+    <div id="modal-vcard" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target===this) closeVCardQR()">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-xs w-full text-center shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scan Kartu Nama</span>
+                <button onclick="closeVCardQR()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="bg-white p-4 rounded-2xl inline-block mb-4">
+                <div id="vcard-qr-box"></div>
+            </div>
+            <h4 class="font-bold text-white text-base">Dede Iskandar</h4>
+            <p class="text-xs text-slate-400 mt-0.5">CV Orange Netcom Sinergi</p>
+            <p class="text-xs text-emerald-400 font-mono mt-1">0857-1177-9993</p>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://bigdee.mamaiting.my.id/api.php';
+        let ALL_CHEATSHEETS = [];
+        let ACTIVE_CS_CAT = 'Semua';
+
+        // ==========================================
+        // 1. DIGITAL VCARD (.VCF) & QR MODAL
+        // ==========================================
+        const VCARD_TEXT = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            'N:Iskandar;Dede;;;',
+            'FN:Dede Iskandar',
+            'ORG:CV Orange Netcom Sinergi',
+            'TITLE:Founder & IT Infrastructure Engineer',
+            'TEL;TYPE=CELL,VOICE:+6285711779993',
+            'EMAIL;TYPE=PREF,INTERNET:info@orangenetcom.my.id',
+            'URL:https://bigdee.my.id',
+            'URL:https://orangenetcom.my.id',
+            'ADR;TYPE=WORK:;;Jl. Cabe IV Terusan No 45, RT.01 RW.06, Pondok Cabe Ilir, Pamulang;Tangerang Selatan;Banten;15418;Indonesia',
+            'END:VCARD'
+        ].join('\r\n');
+
+        function downloadVCard() {
+            const blob = new Blob([VCARD_TEXT], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Dede_Iskandar_OrangeNetcom.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        let vcardQrRendered = false;
+        function openVCardQR() {
+            document.getElementById('modal-vcard').classList.remove('hidden');
+            if (!vcardQrRendered) {
+                new QRCode(document.getElementById('vcard-qr-box'), {
+                    text: VCARD_TEXT,
+                    width: 190,
+                    height: 190,
+                    colorDark: '#0f172a',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+                vcardQrRendered = true;
+            }
+        }
+        function closeVCardQR() {
+            document.getElementById('modal-vcard').classList.add('hidden');
+        }
+
+        // ==========================================
+        // 2. TAB NAVIGATION
+        // ==========================================
+        function switchMainTab(name) {
+            ['toolbox', 'cheatsheet', 'lab'].forEach(t => {
+                document.getElementById('sec-' + t).classList.add('hidden');
+                const btn = document.getElementById('tab-btn-' + t);
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-slate-900', 'text-slate-300');
+            });
+            document.getElementById('sec-' + name).classList.remove('hidden');
+            const active = document.getElementById('tab-btn-' + name);
+            active.classList.add('tab-active');
+            active.classList.remove('bg-slate-900', 'text-slate-300');
+        }
+
+        // ==========================================
+        // 3. IT FIELD TOOLBOX CALCULATORS
+        // ==========================================
+        // 3A. IPv4 Subnet Calculator
+        function initCidrOptions() {
+            const sel = document.getElementById('sub-cidr');
+            let html = '';
+            for (let i = 8; i <= 32; i++) {
+                html += `<option value="${i}" ${i === 24 ? 'selected' : ''}>/${i}</option>`;
+            }
+            sel.innerHTML = html;
+        }
+
+        function intToIp(int) {
+            return [(int >>> 24) & 255, (int >>> 16) & 255, (int >>> 8) & 255, int & 255].join('.');
+        }
+
+        function calcSubnet() {
+            const ipStr = document.getElementById('sub-ip').value.trim();
+            const cidr = parseInt(document.getElementById('sub-cidr').value, 10);
+            const resBox = document.getElementById('sub-result');
+
+            const parts = ipStr.split('.');
+            if (parts.length !== 4 || parts.some(p => p === '' || isNaN(p) || p < 0 || p > 255)) {
+                resBox.innerHTML = '<span class="text-red-400">Format alamat IPv4 tidak valid.</span>';
+                return;
+            }
+
+            const ipInt = ((parseInt(parts[0]) << 24) | (parseInt(parts[1]) << 16) | (parseInt(parts[2]) << 8) | parseInt(parts[3])) >>> 0;
+            const maskInt = cidr === 0 ? 0 : (0xffffffff << (32 - cidr)) >>> 0;
+            const wildcardInt = (~maskInt) >>> 0;
+            const netInt = (ipInt & maskInt) >>> 0;
+            const bcastInt = (netInt | wildcardInt) >>> 0;
+
+            let usableHosts = 0;
+            let rangeText = '-';
+            if (cidr === 32) {
+                usableHosts = 1;
+                rangeText = intToIp(netInt);
+            } else if (cidr === 31) {
+                usableHosts = 2;
+                rangeText = `${intToIp(netInt)} - ${intToIp(bcastInt)} (P2P)`;
+            } else {
+                usableHosts = Math.pow(2, 32 - cidr) - 2;
+                rangeText = `${intToIp((netInt + 1) >>> 0)} - ${intToIp((bcastInt - 1) >>> 0)}`;
+            }
+
+            resBox.innerHTML = `
+                <div class="flex justify-between"><span class="text-slate-400">Network Address:</span><span class="text-emerald-400 font-bold">${intToIp(netInt)}/${cidr}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Subnet Mask:</span><span class="text-white">${intToIp(maskInt)}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Wildcard Mask:</span><span class="text-slate-300">${intToIp(wildcardInt)}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Usable Host Range:</span><span class="text-white">${rangeText}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Broadcast Address:</span><span class="text-white">${intToIp(bcastInt)}</span></div>
+                <div class="flex justify-between border-t border-slate-800 pt-2"><span class="text-slate-400">Total Host Aktif:</span><span class="text-emerald-400 font-bold">${usableHosts.toLocaleString('id-ID')} Host</span></div>
+            `;
+        }
+
+        // 3B. CCTV Storage & Bandwidth Estimator
+        function calcCCTV() {
+            const cams = Math.max(1, parseInt(document.getElementById('cctv-cam').value) || 1);
+            const baseKbps = parseFloat(document.getElementById('cctv-res').value);
+            const codecMult = parseFloat(document.getElementById('cctv-codec').value);
+            const fpsMult = parseFloat(document.getElementById('cctv-fps').value);
+            const days = Math.max(1, parseInt(document.getElementById('cctv-days').value) || 1);
+
+            const kbpsPerCam = baseKbps * codecMult * fpsMult;
+            const totalMbps = (kbpsPerCam * cams) / 1000;
+            // Total GigaBytes (1000^3) untuk spesifikasi kapasitas HDD pabrikan
+            const totalBytes = (kbpsPerCam * 1000 / 8) * 86400 * days * cams;
+            const totalTB = totalBytes / 1e12;
+
+            document.getElementById('cctv-result').innerHTML = `
+                <div>
+                    <span class="block text-[11px] uppercase tracking-wider text-slate-400">Kebutuhan Storage</span>
+                    <span class="text-xl font-extrabold text-emerald-400">${totalTB >= 1 ? totalTB.toFixed(2) + ' TB' : (totalTB * 1000).toFixed(0) + ' GB'}</span>
+                </div>
+                <div class="border-l border-slate-800">
+                    <span class="block text-[11px] uppercase tracking-wider text-slate-400">Total Bitrate Stream</span>
+                    <span class="text-xl font-extrabold text-white">${totalMbps.toFixed(1)} Mbps</span>
+                </div>
+            `;
+        }
+
+        // 3C. MikroTik Script Generator
+        function renderMkInputs() {
+            const tpl = document.getElementById('mk-tpl').value;
+            const p1 = document.getElementById('mk-param-1-wrap');
+            const p2 = document.getElementById('mk-param-2-wrap');
+
+            if (tpl === 'nat') {
+                p1.innerHTML = `<label class="block text-xs text-slate-400 mb-1">Interface WAN</label><input type="text" id="mk-p1" value="ether1-WAN" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none">`;
+                p2.innerHTML = '';
+            } else if (tpl === 'queue') {
+                p1.innerHTML = `<label class="block text-xs text-slate-400 mb-1">Target IP / Subnet</label><input type="text" id="mk-p1" value="192.168.88.50/32" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none">`;
+                p2.innerHTML = `
+                    <div><label class="block text-xs text-slate-400 mb-1">Max Upload</label><input type="text" id="mk-p2" value="10M" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Max Download</label><input type="text" id="mk-p3" value="25M" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none"></div>
+                `;
+            } else if (tpl === 'syslog') {
+                p1.innerHTML = `<label class="block text-xs text-slate-400 mb-1">IP Server Syslog</label><input type="text" id="mk-p1" value="192.168.88.250" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none">`;
+                p2.innerHTML = `<div><label class="block text-xs text-slate-400 mb-1">Port UDP</label><input type="text" id="mk-p2" value="514" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none"></div>`;
+            } else if (tpl === 'dns') {
+                p1.innerHTML = `<label class="block text-xs text-slate-400 mb-1">Primary / Secondary DNS</label><input type="text" id="mk-p1" value="1.1.1.1,9.9.9.9" oninput="genMkScript()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white outline-none">`;
+                p2.innerHTML = '';
+            }
+        }
+
+        function genMkScript() {
+            const tpl = document.getElementById('mk-tpl').value;
+            const p1 = (document.getElementById('mk-p1')?.value || '').trim();
+            const p2 = (document.getElementById('mk-p2')?.value || '').trim();
+            const p3 = (document.getElementById('mk-p3')?.value || '').trim();
+            let out = '';
+
+            if (tpl === 'nat') {
+                out = `/ip firewall nat\nadd chain=srcnat out-interface="${p1}" action=masquerade comment="NAT Masquerade WAN"`;
+            } else if (tpl === 'queue') {
+                out = `/queue simple\nadd name="Limit-${p1}" target=${p1} max-limit=${p2}/${p3} queue=pcq-upload-default/pcq-download-default`;
+            } else if (tpl === 'syslog') {
+                out = `/system logging action\nadd name=RemoteSyslog target=remote remote=${p1} remote-port=${p2}\n/system logging\nadd topics=info,warning,error,critical action=RemoteSyslog`;
+            } else if (tpl === 'dns') {
+                out = `/ip dns\nset servers=${p1} allow-remote-requests=yes cache-size=4096KiB`;
+            }
+            document.getElementById('mk-output').textContent = out;
+        }
+
+        // 3D. WiFi QR Generator
+        let wifiQrInstance = null;
+        function genWifiQR() {
+            const ssid = document.getElementById('wifi-ssid').value.replace(/([\\;,:"])/g, '\\$1');
+            const enc = document.getElementById('wifi-enc').value;
+            const pass = document.getElementById('wifi-pass').value.replace(/([\\;,:"])/g, '\\$1');
+            const payload = enc === 'nopass' ? `WIFI:T:nopass;S:${ssid};;` : `WIFI:T:${enc};S:${ssid};P:${pass};;`;
+
+            const box = document.getElementById('wifi-qr-box');
+            box.innerHTML = '';
+            wifiQrInstance = new QRCode(box, {
+                text: payload,
+                width: 120,
+                height: 120,
+                colorDark: '#0f172a',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        function copyText(elId, btn) {
+            const txt = document.getElementById(elId).textContent;
+            navigator.clipboard.writeText(txt).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400 mr-1"></i> Tersalin';
+                setTimeout(() => { btn.innerHTML = orig; }, 1500);
+            });
+        }
+
+        // ==========================================
+        // 4. FETCH DYNAMIC CONTENT (CHEATSHEETS & LAB)
+        // ==========================================
+        function escapeHtml(str) {
+            return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function renderCategoryFilters() {
+            const cats = ['Semua', ...new Set(ALL_CHEATSHEETS.map(c => c.category))];
+            const wrap = document.getElementById('cs-cat-filters');
+            wrap.innerHTML = cats.map(c => `
+                <button onclick="ACTIVE_CS_CAT='${escapeHtml(c)}'; renderCategoryFilters(); filterCheatsheets();"
+                    class="px-3.5 py-2 rounded-xl text-xs font-bold border transition ${ACTIVE_CS_CAT === c ? 'bg-emerald-500 text-slate-950 border-emerald-500' : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'}">
+                    ${escapeHtml(c)}
+                </button>
+            `).join('');
+        }
+
+        function filterCheatsheets() {
+            const q = document.getElementById('cs-search').value.toLowerCase().trim();
+            const list = document.getElementById('cs-list');
+
+            const filtered = ALL_CHEATSHEETS.filter(item => {
+                const matchCat = ACTIVE_CS_CAT === 'Semua' || item.category === ACTIVE_CS_CAT;
+                const hay = `${item.title} ${item.category} ${item.tags} ${item.code} ${item.notes}`.toLowerCase();
+                return matchCat && (!q || hay.includes(q));
+            });
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="text-center py-10 text-slate-500 text-sm bg-slate-900 border border-slate-800 rounded-2xl">Tidak ada catatan yang cocok dengan pencarian.</div>';
+                return;
+            }
+
+            list.innerHTML = filtered.map((item, idx) => `
+                <article class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">${escapeHtml(item.category)}</span>
+                            <h3 class="font-bold text-white text-base">${escapeHtml(item.title)}</h3>
+                        </div>
+                        <button onclick="copyText('cs-code-${idx}', this)" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+                            <i class="fa-regular fa-copy mr-1"></i> Salin Perintah
+                        </button>
+                    </div>
+                    <pre id="cs-code-${idx}" class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs font-mono text-emerald-300 overflow-x-auto leading-relaxed">${escapeHtml(item.code)}</pre>
+                    ${item.notes ? `<p class="text-xs text-slate-400 mt-3 leading-relaxed"><i class="fa-solid fa-circle-info text-emerald-400 mr-1.5"></i>${escapeHtml(item.notes)}</p>` : ''}
+                </article>
+            `).join('');
+        }
+
+        function renderProjects(projects) {
+            const box = document.getElementById('lab-list');
+            if (!projects || projects.length === 0) {
+                box.innerHTML = '<div class="col-span-full text-center py-10 text-slate-500 text-sm bg-slate-900 border border-slate-800 rounded-2xl">Belum ada dokumentasi proyek yang dipublikasikan.</div>';
+                return;
+            }
+            box.innerHTML = projects.map(p => `
+                <article class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col hover:border-slate-700 transition">
+                    <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" class="w-full h-52 object-cover bg-slate-950">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-bold text-emerald-400 mb-2">
+                                <span>${escapeHtml(p.category)}</span>
+                                <span class="text-slate-500">${escapeHtml(p.year)}</span>
+                            </div>
+                            <h3 class="font-bold text-white text-lg mb-2 leading-snug">${escapeHtml(p.title)}</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">${escapeHtml(p.summary)}</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+                            ${(p.tech || '').split(',').filter(Boolean).map(t => `<span class="text-[11px] px-2.5 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-300 font-mono">${escapeHtml(t.trim())}</span>`).join('')}
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        async function loadDynamicContent() {
+            try {
+                const res = await fetch(API_URL);
+                const json = await res.json();
+                ALL_CHEATSHEETS = json.cheatsheets || [];
+                renderCategoryFilters();
+                filterCheatsheets();
+                renderProjects(json.projects || []);
+            } catch (e) {
+                document.getElementById('cs-list').innerHTML = '<div class="text-center py-8 text-slate-500 text-sm">Gagal memuat data dari server API.</div>';
+                document.getElementById('lab-list').innerHTML = '<div class="col-span-full text-center py-8 text-slate-500 text-sm">Gagal memuat dokumentasi proyek.</div>';
+            }
+        }
+
+        // ==========================================
+        // 5. HIDDEN ADMIN TRIGGER (TRIPLE-CLICK / CTRL+SHIFT+A)
+        // ==========================================
+        function openAdminPanel() {
+            const url = ['https://', 'bigdee', '.', 'mamaiting.my.id', '/'].join('');
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        const triggerEl = document.getElementById('secret-admin-trigger');
+        if (triggerEl) {
+            let clicks = 0, timer = null;
+            triggerEl.addEventListener('click', () => {
+                clicks++;
+                clearTimeout(timer);
+                if (clicks >= 3) {
+                    clicks = 0;
+                    openAdminPanel();
+                } else {
+                    timer = setTimeout(() => { clicks = 0; }, 1000);
+                }
+            });
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 65) {
+                e.preventDefault();
+                openAdminPanel();
+            }
+        });
+
+        // Init saat halaman dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            initCidrOptions();
+            calcSubnet();
+            calcCCTV();
+            renderMkInputs();
+            genMkScript();
+            genWifiQR();
+            loadDynamicContent();
+        });
+    </script>
+</body>
+</html>
